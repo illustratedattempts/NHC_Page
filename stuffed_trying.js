@@ -1,3 +1,4 @@
+/*
 function myFunction(){
     var x = document.getElementById("Ionela-desc");
     var y = document.getElementById("Ionela-card");
@@ -14,3 +15,43 @@ function myFunction(){
         butt.style.background = "#FCFCFD";
     }
 }
+*/
+
+
+
+const cards = document.querySelectorAll(".card");
+cards.forEach(card => {
+    let person_name = card.id; // For readability
+    console.log(card.id);
+    let button = document.getElementById(person_name+"-button");
+    let desc = document.getElementById(person_name+"-desc");
+
+    button.addEventListener("click", () => {
+        if(desc.style.display === "none"){
+            desc.style.display = "block";
+            button.innerHTML = "&#8212";
+            button.style.background = "rgb(150, 149, 146, .2)";
+        }
+        else{
+            desc.style.display = "none";
+            button.innerHTML = "&#43;";
+            button.style.background = "#FCFCFD";
+        }
+    })
+})
+
+
+
+/*
+cards.forEach(elements => {
+    console.log(elements.id);
+    let button = document.getElementById(elements.id+"-button");
+    let desc = document.getElementById(elements.id+"-desc");
+    button.addEventListener("click", (event) => {
+        if(event.target === button){
+            console.log("test");
+            desc.classList.toggle("show-desc");
+        }
+    })
+})
+*/
