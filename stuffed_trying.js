@@ -27,15 +27,15 @@ cards.forEach(card => {
     let desc = document.getElementById(person_name+"-desc");
 
     button.addEventListener("click", () => {
-        if(desc.style.display === "none"){
+        if(desc.style.display === "block"){
+            desc.style.display = "none";
+            button.innerHTML = "&#43;";
+            button.style.background = "#FCFCFD";            
+        }
+        else{
             desc.style.display = "block";
             button.innerHTML = "&#8212";
             button.style.background = "rgb(150, 149, 146, .2)";
-        }
-        else{
-            desc.style.display = "none";
-            button.innerHTML = "&#43;";
-            button.style.background = "#FCFCFD";
         }
     })
 })
